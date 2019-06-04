@@ -2,7 +2,14 @@ package Hazards;
 
 public abstract class Hazard {
 
-    public Hazard(int healthThreat, int girdThreat) {
+    private int healthThreat;
 
+    public Hazard(int healthThreat) {
+        this.healthThreat = healthThreat;
+
+    }
+
+    public int getHealthThreat() {
+        return healthThreat;
     }
 }

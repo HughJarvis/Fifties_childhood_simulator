@@ -1,8 +1,19 @@
 package Hazards;
 
-public class BarbedWire extends Hazard {
+import Players.Player;
 
-    public BarbedWire(int healthThreat, int girdThreat) {
-        super(healthThreat, girdThreat);
+public class BarbedWire extends Hazard implements IBump, IMaim {
+
+    public BarbedWire(int healthThreat) {
+        super(healthThreat);
+    }
+
+    public void bump(Player player) {
+        player.loseGirdLife();
+    }
+
+    public void maim(Player player) {
+
+        player.decreaseHealth(this.getHealthThreat());
     }
 }
